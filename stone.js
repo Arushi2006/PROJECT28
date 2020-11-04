@@ -13,7 +13,7 @@ class Stone
     this.stone=Bodies.rectangle(x,y,width,height,options);
     this.width=width;
     this.height=height;
-    this.image=loadImage("stone.png");
+    this.image=loadImage("FRUITS/stone.png");
     World.add(world,this.stone);
     }
 display()
