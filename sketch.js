@@ -1,4 +1,5 @@
 var ground,tree,stone,boy,mango,elastic;
+var m1,m2,m3,m4,m5;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -6,7 +7,7 @@ const Body = Matter.Body;
 
 function preload()
 {
-  this.boy=loadImage("FRUITS/boy.png");	
+  boy=loadImage("FRUITS/boy.png");	
 }
 
 function setup() {
@@ -21,6 +22,11 @@ function setup() {
   stone=new Stone(230,40,78,90);
   mango=new Mango(300,50,40,89);
   elastic=new Elastic(300,40,8,60);
+  m1=new Mango(300,500,30,50);
+  m2=new Mango(300,400,30,50);
+  m3=new Mango(399,300,30,40);
+  m4=new Mango(299,399,40,90);
+  m5=new Mango(100,300,40,50);
 
 	//Create the Bodies Here.
    this.boy=Bodies.rectangle(200,40,78,90);
@@ -41,6 +47,11 @@ function draw() {
   boy.display();
   mango.display();
   elastic.display();
+  m1.display();
+  m2.display();
+  m3.display();
+  m4.display();
+  m5.display();
   detectcollision(stone,mango1);
   detectcollision(stone,mango2);
   detectcollision(stone,mango3);
@@ -53,7 +64,7 @@ function mouseDragged()
 }
 function mouseReleased()
 {
- this.elastic.fly();
+ elastic.fly();
 }
 
 function detectcollision(stone,mamgo)
@@ -78,6 +89,8 @@ function keyPressed()
     elastic.attach(stone.body);
   }
 }
+
+
 
 
 
